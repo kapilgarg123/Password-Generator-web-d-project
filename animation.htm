@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation
+
+    </title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #ball{
+            display: flex;
+            flex-direction: row;
+            margin: 5px;
+            border: 2px solid white;
+            align-items: center;
+
+         }
+        .balls{
+            border: 2px solid rgb(255, 255, 255);
+            width: 10px;
+            margin: 5px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        #ball1{
+            border: 2px solid rgb(255, 255, 255);
+            width: 7px;
+            margin: 5px;
+            height: 7px;
+            border-radius: 7px;
+            background-color: white;
+        /* transform: translateX(100px); */
+        /* animation: loading; */
+        position: relative;
+        animation: loading 2s ease-in-out 0s infinite backwards;
+        }
+        #ball2{
+            position: relative;
+            /* animation: updown 1s ease-in-out 0.4s infinite none; */
+        }
+       
+        @keyframes loading {
+            0%{
+                left: 0px;
+            }
+            50%{
+                left: 95px;
+            }
+            100%{
+                left: 0;
+            }
+        }
+        @keyframes updown {
+            0%{
+                top: 0;
+            }
+            50%{
+                top: 20px;
+            }
+            100%{
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="ball">
+        <div class="balls" id="ball1"></div>
+        <div class="balls" id="ball2"></div>
+        <div class="balls" id="ball3"></div>
+        <div class="balls" id="ball4"></div>
+        <div class="balls" id="ball5"></div>
+    </div>
+    <script>
+        let ball1 = document.getElementById("ball1");
+        let ball2 = document.getElementById("ball2");
+        let ball3 = document.getElementById("ball3");
+        let ball4 = document.getElementById("ball4");
+        let ball5 = document.getElementById("ball5");
+        function ani(){
+
+            ball2.style.animation = 'updown 1s ease-in-out 0.4s infinite none ';
+        }
+        if (ball1.style.left == "95px") {
+            ani();
+        }
+
+    </script>
+</body>
+</html>
